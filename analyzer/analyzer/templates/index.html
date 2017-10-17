@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Twitter Sentiment Analyser</title>
+<meta name="ROBOTS" content="NOINDEX, NOFOLLOW" />
+<!-- CSS styles for standard search box -->
+<style type="text/css">
+	.bg {
+    padding:20px;
+    background:#EEE;
+}
+
+.box {
+    background: white;
+    box-shadow: 0px 2px 3px rgba(0,0,0,.13) ,1px 2px 2px rgba(0,0,0,.1) , -1px -2px 2px rgba(0,0,0,.05) ;
+}
+</style>
+</head>
+<body>
+	<!-- HTML for SEARCH BAR -->
+	<div class="box" style="width:800px; margin:0 auto;">
+		<div id="tfheader">
+			<center><form action="." method="post">{% csrf_token %}
+			         {{form.as_p}}
+			         <input type="submit" value="submit" class="tfbutton">
+			</form></center>
+		<div class="tfclear"></div>
+		</div>
+	</div>
+	{% if tweets %}
+	<br>
+	<div class="box" style="width:800px; margin:0 auto;">
+		<center>
+			<b>Positive tweets: {{pos}}</b><br>
+			<b>Negative Tweets: {{neg}}</b><br>
+			<b>Neutral Tweets : {{net}}</b><br><br>
+		</center>
+	</div>
+	{% for i in tweets %}
+		<div class="bg">
+		    <div class="box">
+		    	{{i}}<br>
+		    </div>
+		</div>
+		
+	{% endfor %}
+	{% endif %}
+</body>
+</html>
+
