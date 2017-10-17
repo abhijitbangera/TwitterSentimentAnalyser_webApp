@@ -25,7 +25,7 @@ SECRET_KEY = 'q#amx1t%_#!*)29srktvev$g5l4k!0#*)@ma14w7m+2z2l_bix'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['analyzetwitter.herokuapp.com','localhost', '127.0.0.1']
 
 
 # Application definition
